@@ -1,0 +1,12 @@
+<h3>Note Creator</h3>
+<mat-card>
+  <mat-form-field>
+      <textarea rows="4" [(ngModel)]="noteContent" matInput></textarea>
+  </mat-form-field>
+  <button mat-raised-button color="primary" (click)="onAddNote()">Save Note</button>
+</mat-card>
+
+<hr>
+
+<p>{{noteContent}}</p>
+<p>{{newNote}}</p>
