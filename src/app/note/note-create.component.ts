@@ -6,10 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./note-create.component.css']
 })
 export class NoteCreateComponent {
+  note = {content: '', title: ''};
+  notes = [];
   noteContent = '';
+  noteTitle = '';
   newNote = 'no content';
 
   onAddNote() {
-    this.newNote = this.noteContent;
+    this.notes.push(this.note);
+    this.note = {content: '', title: ''};
   }
 }

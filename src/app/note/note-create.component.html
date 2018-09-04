@@ -1,12 +1,17 @@
 <h3>Note Creator</h3>
 <mat-card>
   <mat-form-field>
-      <textarea rows="4" [(ngModel)]="noteContent" matInput></textarea>
+      <input matInput  [(ngModel)]= "note.title" placeholder="Title">
+  </mat-form-field>
+  <mat-form-field>
+      <textarea rows="4" [(ngModel)]="note.content" matInput placeholder="Note content"></textarea>
   </mat-form-field>
   <button mat-raised-button color="primary" (click)="onAddNote()">Save Note</button>
 </mat-card>
 
 <hr>
+<mat-card *ngFor = "let note of notes">
+  <mat-card-header>{{note.title}}</mat-card-header>
+  <mat-card-content>{{note.content}}</mat-card-content>
+</mat-card>
 
-<p>{{noteContent}}</p>
-<p>{{newNote}}</p>
