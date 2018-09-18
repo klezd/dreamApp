@@ -1,0 +1,13 @@
+<h3>Note list</h3>
+<mat-accordion multi="true" *ngIf="notes.length > 0">
+  <mat-expansion-panel *ngFor="let note of notes">
+    <mat-expansion-panel-header> {{ note.title }}
+      </mat-expansion-panel-header>
+    <p> {{ note.content }} </p>
+    <mat-action-row>
+      <button mat-button color="primary">Edit</button>
+      <button mat-button color="warn">Delete</button>
+    </mat-action-row>
+  </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text mat-body-1" *ngIf="notes.length <= 0">No notes added!</p>

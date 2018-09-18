@@ -1,18 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {  MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule } from '@angular/material';
+import { HttpClientModule } from '@angular/common/http';
+import { MatInputModule, MatCardModule, MatButtonModule, MatToolbarModule, MatExpansionModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
-import { NoteCreateComponent } from './note/note-create.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoteCreateComponent } from './notes/note-create.component';
 import { HeaderComponent } from './header/header.component';
+import { NoteListComponent } from './notes/note-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NoteCreateComponent,
-    HeaderComponent
+    HeaderComponent,
+    NoteListComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +25,8 @@ import { HeaderComponent } from './header/header.component';
     MatCardModule,
     MatButtonModule,
     MatToolbarModule,
-    MatExpansionModule
+    MatExpansionModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

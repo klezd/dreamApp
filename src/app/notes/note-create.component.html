@@ -1,0 +1,19 @@
+<h3>Note Creator</h3>
+<mat-card>
+  <form (submit)="onAddNote(noteForm)" #noteForm="ngForm">
+      <mat-form-field>
+          <input matInput type="text" name="title" ngModel required minlength="3" placeholder="Title" #title="ngModel">
+          <mat-error *ngIf="title.invalid">Please enter title for this note!</mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+          <textarea matInput type="text" name="content" ngModel required rows="4" placeholder="Note content" #content="ngModel"></textarea>
+          <mat-error *ngIf="content.invalid">Please enter content for this note!</mat-error>
+      </mat-form-field>
+
+      <button mat-raised-button color="primary" type="submit">Save Note</button>
+  </form>
+</mat-card>
+
+
+
