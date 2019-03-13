@@ -2,7 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
 
-
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended:false }));
 
@@ -62,6 +61,14 @@ app.get("/api/notes", (req, res, next) => {
     messages: "note fetched successfully",
     notes: notes
   });
+});
+
+app.get("*", (req, res, next) => {
+  const note = req.body;
+  console.log(note);
+  res.status(301).json({
+    message: "wrong page"
+  })
 });
 
 module.exports = app;
